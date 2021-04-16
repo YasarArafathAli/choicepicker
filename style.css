@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    background-color: #E3E3FB;
+
+}
+
+.container{
+    transform: translateY(-100px);
+}
+.container h1{
+    margin: 10px 0 20px;
+    font-size: 80px;
+    color: #3c096c;
+    font-family: 'Bungee', cursive;
+    line-height: 1;
+}
+
+.container h4 {
+    padding: 40px; 
+    font-size: 22px;
+
+
+}
+
+textarea{
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px #240046 solid;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 0;
+}
+
+.tags{
+    padding: 20px;
+    margin: 2px;
+}
+
+.tag{
+    background-color: #474796;
+
+    /* background-color: #7374c0 ;  */
+    /* #1b998b; */
+    color: aliceblue;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.tag.highlight{
+    background-color: #30025d;
+}
+
+#result{
+    display: none;
+}
