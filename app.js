@@ -2,7 +2,7 @@ const tags = document.querySelector("#tags")
 const textarea = document.querySelector("#choices")
 const result = document.querySelector("#result")
 let choices = []
-
+let randomnumber = 0
 textarea.focus();
 
 textarea.addEventListener("keyup", e => {
@@ -13,6 +13,7 @@ textarea.addEventListener("keyup", e => {
         setTimeout(() => {
             e.target.value = ""
         }, 10)
+    result.innerHTML = "";
         randomSelect()
     }
 })
@@ -33,14 +34,15 @@ function randomSelect() {
         setTimeout(() => {
             const randomtag = pickRandomTag();
             highlightTag(randomtag)
-            // showChoice(randomtag)
+            showChoice(choices[randomnumber])
         }, 100);
-    }, times*100);
+    }, times * 100);
 }
 
 function pickRandomTag() {
-    const choicetags = document.getElementsByClassName("tag");
+      const choicetags = document.getElementsByClassName("tag");
     const random = Math.floor(Math.random() * choicetags.length);
+    randomnumber = random
     return choicetags[random]
 
 }
@@ -53,14 +55,17 @@ function unhighlightTag(tag) {
     tag.classList.remove("highlight")
 }
 
-// function showChoice(tag) {
-//     console.log(tag);
-//     let ptag = document.createElement("p");
-//     ptag.innerHTML = `the tag chosen is ${tag}`
-//     result.appendChild(ptag);
-//     result.style.display = "block";
+function showChoice(tag) {
+    result.innerHTML = "";
+    let span = document.createElement("span");
+        span.classList.add("tag","highlight");
+        span.innerText = tag;
+    let ptag = document.createElement("p");
+    ptag.innerHTML = `the tag chosen is ${span.outerHTML}`
+    result.appendChild(ptag);
+    result.style.display = "block";
 
-// }
+}
 
 function createTags(input) {
     // console.log(input);
